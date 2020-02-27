@@ -1400,15 +1400,146 @@ h1 {
 
 .container {
   width: 80%;
-  max-width: unset;
-  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: unset;
+  padding: 5%;
+  margin-left: 8%;
+  margin-right: 10%;
+  left: auto;
+  right: auto;
 }
 
 .foot {
   text-align: center;
+  margin-top: 100px;
 }
 
-.visitUrl {
-  max-width: 30px;
-  max-height: 30px;
+.goguImg {
+  text-align: center;
+  flex: 1;
+  width: 80%;
+  max-width: 800px;
+  margin-bottom: 30px;
 }
+
+@keyframes appear {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.logout {
+  animation: 1s ease-out 0s 1 appear;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d161d;
+  border-radius: 15px;
+  width: 80%;
+  min-width: 300px;
+  padding: 20px;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.logouth2 {
+  margin-top: 0px;
+  text-align: left;
+  font-size: 16pt;
+  color: #ecedf3;
+}
+
+.logoutp {
+  font-size: 12pt;
+  color: #ecedf3;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logoutcancel {
+  color: #768aaa;
+  margin: auto 15px;
+}
+
+.logoutcancel:hover {
+  color: #2d85da;
+  cursor: pointer;
+}
+
+.logoutyes {
+  margin: auto 0px;
+  background-color: #2d85da;
+  width: 75px;
+  font-weight: 200;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.logoutyes:hover {
+  background-color: #3299fb;
+}
+
+
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5px auto;
+}
+
+.contactImg {
+  flex: 1;
+  margin: auto 15px;
+  color: #ecedf3;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.contactText {
+  flex: 1;
+  margin: auto 15px;
+  color: #ecedf3;
+}
+
+.contactText a {
+  color: #2d85da;
+}
+
+.contactText a:hover {
+  color: #3299fb;
+}
+
+table {
+  width: 300px;
+}
+
+.poem {
+  color: #ecedf3 !important;
+  font-style: italic;
+}
+/*<div className="logout">
+          <h2 className="logouth2">Get in touch</h2>
+          <p className="logoutp">Do you want to get in touch?</p>
+          <a className="logoutcancel" href="">CANCEL</a>
+          <button className="logoutyes">YES</button>
+        </div>*/

@@ -1,69 +1,106 @@
 import React, { Component } from 'react'
-import {descriptions, prices, images, titles, links, titlesEn, descriptionsEn} from './arrays';
-import linkIco from './visit_url.png';
+import Goodbye from './google-logo.png'
+import call from './call.png'
+import facebook from './facebook.png'
+import gmail from './gmail.png'
+import instagram from './instagram.png'
+import linkedin from './linkedin.png'
+import { useState } from 'react';
 
+export default function App() {
 
-const data = (titles,descriptions,images,links,prices,titlesEn,descriptionsEn) => {
-    let n = descriptions.length;
-    let datas = []
-    for (let i=0;i<n;i++) {
-        datas.push([titles[i],descriptions[i],images[i],links[i],prices[i],titlesEn[i],descriptionsEn[i]])
-    }
-    return datas;
-}
-
-class App extends Component {
-  render() {
+  
+    const [showText, setShowText] = useState(false);
+    
     return (
       <div className="container">
-        <h1>LIDL CH</h1>
-        <p>The table below contains a list of products from LIDL online, Switzerland.</p>
-        <table>
-          <thead>
+        <img src={Goodbye} alt="" className="goguImg" />
+        <div className="poem">
+          <p>
+            It's been two years of OWNZONES fun and now it's time for me to run;<br/>
+            I'm moving out to Switzerland, thus my OWNZONES time will end.
+          </p>
+          <p>
+            I've learned so much over these years, when hard at work or drinking beers,<br/>
+            You've made me feel as if at home - with friends around, never alone.
+          </p>
+          <p>
+            I may be done with working here, but I for sure won't disappear;<br/>
+            I'll be out on my special quest and wish you luck and all the best.
+          </p>
+          <p>
+            I wish you growth in work and play, I wish you're happy every day,<br/>
+            Love you all, I hope you know. Find my contacts down below.
+          </p>
+        </div>
+        <div className="logout">
+          <h2 className="logouth2">Get in touch</h2>
+          <p className="logoutp">Do you want to get in touch?</p>
+          <div className="buttons">
+            <p className="logoutcancel" onClick={() => setShowText(!showText)}>CANCEL</p>
+            <button className="logoutyes" onClick={() => setShowText(!showText)}>YES</button>
+          </div>
+        </div>
+        
+          {showText && 
+          <table>
             <tr>
-              <th>Image</th>
-              <th>Product</th>
-              <th>Product (EN)</th>
-              <th>Price</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-          {
-            data(titles,descriptions,images,links,prices,titlesEn,descriptionsEn).map((numList,i) =>(
-              <tr key={i}>
-                <td><img src={'./images/'+numList[2]} alt='' className='productImage' /></td>
-                <td>
-                  <p className="productTitle">
-                    {numList[0]}
-                  </p>
-                  <p className="productDescription">
-                    {numList[1]}
-                  </p>
-                </td>
-                <td>
-                  <p className="productTitle">
-                    {numList[5]}
-                  </p>
-                  <p className="productDescription">
-                    {numList[6]}
-                  </p>
-                </td>
-                <td>{numList[4]+' CHF'}</td>
-                <td>
-                  <a href={numList[3]}>
-                    <img src={linkIco} alt='' className="visitUrl"/>
+              <td><img src={gmail} className="contactImg" /></td>
+              <td>
+                <p className="contactText">
+                  <a href="mailto:ilie06@gmail.com">
+                    ilie06@gmail.com
                   </a>
-                </td>
-              </tr>
-            ))
-            }
-          </tbody>
-        </table>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td><img src={call} className="contactImg" /></td>
+              <td>
+                <p className="contactText">
+                  <a href="tel:0040745522704">
+                    +40 745 522 704
+                  </a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td><img src={facebook} className="contactImg" /></td>
+              <td>
+                <p className="contactText">
+                  <a href="www.facebook.com/nosthrillz">
+                    nosthrillz
+                  </a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td><img src={linkedin} className="contactImg" /></td>
+              <td>
+                <p className="contactText">
+                  <a href="https://www.linkedin.com/in/ilie-bogdan-mihai">
+                    ilie-bogdan-mihai
+                  </a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td> <img src={instagram} className="contactImg" /></td>
+              <td>
+                <p className="contactText">
+                  <a href="https://www.instagram.com/nosthrillz">
+                    nosthrillz
+                  </a>
+                </p>
+              </td>
+            </tr>
+          </table>
+          }
+        
         <p className="foot">Powered by <a href="https://github.com/nosthrillz">NoSThrillZ</a></p>
       </div>
+      
     )
-  }
+  
 }
 
-export default App
