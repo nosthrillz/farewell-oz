@@ -15,7 +15,7 @@ export default function App() {
     return (
       <div className="container">
         <img src={Goodbye} alt="" className="goguImg" />
-        <div className="poem">
+        <div className="poemNormal">
           <p>
             It's been two years of OWNZONES fun and now it's time for me to run;<br/>
             I'm moving out to Switzerland, thus my OWNZONES time will end.
@@ -31,6 +31,32 @@ export default function App() {
           <p>
             I wish you growth in work and play, I wish you're happy every day,<br/>
             Love you all, I hope you know. Find my contacts down below.
+          </p>
+        </div>
+        <div className="poemSmall">
+          <p>
+            It's been two years of OWNZONES fun<br/>
+            And now it's time for me to run;<br/>
+            I'm moving out to Switzerland,<br/>
+            Thus my OWNZONES time will end.
+          </p>
+          <p>
+            I've learned so much over these years,<br/>
+            When hard at work or drinking beers,<br/>
+            You've made me feel as if at home -<br/>
+            With friends around, never alone.
+          </p>
+          <p>
+            I may be done with working here,<br/>
+            But I for sure won't disappear;<br/>
+            I'll be out on my special quest<br/>
+            And wish you luck and all the best.
+          </p>
+          <p>
+            I wish you growth in work and play,<br/>
+            I wish you're happy every day,<br/>
+            Love you all, I hope you know --<br/>
+            Find my contacts down below.
           </p>
         </div>
         <div className="logout">

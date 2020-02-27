@@ -1533,9 +1533,27 @@ table {
   width: 300px;
 }
 
-.poem {
+.poemNormal {
   color: #ecedf3 !important;
   font-style: italic;
+  display: block;
+  font-size: 14pt;
+}
+
+.poemSmall {
+  color: #ecedf3 !important;
+  font-style: italic;
+  display: none;
+  font-size: 10pt;
+}
+
+@media screen and (max-width: 660px) {
+  .poemSmall {
+    display: block;
+  }
+  .poemNormal {
+    display: none;
+  }
 }
 /*<div className="logout">
           <h2 className="logouth2">Get in touch</h2>
